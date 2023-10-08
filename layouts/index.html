@@ -1,1 +1,6 @@
-<script>window.location = "/posts"</script>
+{{ with .GetPage `/posts` }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+{{ end }}
+
+<!--  <script>window.location = "/posts"</script> -->

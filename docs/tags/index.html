@@ -1,5 +1,5 @@
 <html>
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="UTF-8">
     <title>
       Josh Errickson
@@ -7,7 +7,6 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
@@ -31,6 +30,8 @@
           --cyan: #2aa198;
           --green: #859900;
 
+           
+          color-scheme: light dark;
       }
 
       body {
@@ -39,8 +40,15 @@
           max-width: 600px;
           margin: 0 auto;
           padding: 15px 0 80px 0;
-          background: var(--base02);
-          color: var(--base2);
+          color: var(--base02);
+          background: var(--base2);
+      }
+
+      @media (prefers-color-scheme: dark) {
+          body {
+              color: var(--base2);
+              background: var(--base02);
+          }
       }
 
       body a {
@@ -85,9 +93,9 @@
   <body>
     
 <article class="container">
-  <a href="/">errickson.net</a>
+  <a href="https://errickson.net">return to errickson.net</a>
   <br>
-  <a href="https://errickson.net/posts">Back to Blog</a>
+  <a href="https://errickson.net/posts">back to blog</a>
   <h1>Tags</h1>
   
   <ul>
