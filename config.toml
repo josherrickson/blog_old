@@ -1,4 +1,4 @@
-baseURL = 'http://errickson.net/'
+baseURL = 'http://errickson.net/blog'
 languageCode = 'en-us'
 title = 'Josh Errickson'
 publishDir = 'docs'
