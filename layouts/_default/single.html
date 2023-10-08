@@ -5,20 +5,10 @@
 
 {{ define "page" }}
 <article class="container">
-  <a href="https://errickson.net">return to errickson.net</a>
-  <br>
-  <a href="{{ .CurrentSection.RelPermalink }}">back to blog</a>
   <h1>{{ .Title }}</h1>
-  {{ with .Param "tags" }}
-  {{ range $index, $tag := (. | sort) }}
-  {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
-  <a href="{{ .Permalink }}">#{{ $tag | urlize }}</a>
-  {{ end }}
-  {{ end }}
-  {{ end }}
   {{ .Content }}
   <br>
-  <a href="{{ .CurrentSection.RelPermalink }}">back to blog</a>
+  <a href='https://errickson.net'>Home</a> | <a href='{{ .CurrentSection.RelPermalink }}'>Back to blog</a>
   <img src="https://errickson.goatcounter.com/count?p=/{{ .RelPermalink }}">
 </article>
 {{ end }}

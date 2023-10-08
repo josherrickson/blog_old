@@ -1,8 +1,5 @@
 {{ define "page" }}
 <article class="container">
-  {{ if ne .Kind "home" }}
-  <a href="https://errickson.net">return to errickson.net</a>
-  {{ end }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <ul>
@@ -13,11 +10,8 @@
       </li>
     {{ end }}
   </ul>
-  <h1>Tags</h1>
-  <ul id="all-tags">
-    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-    <li><a href="{{ "blog/tags/" | relLangURL }}{{ $name | urlize }}">#{{ $name }}</a></li>
-    {{ end }}
-  </ul>
+  {{ if ne .Kind "home" }}
+  <a href='https://errickson.net'>Home</a>
+  {{ end }}
 </article>
 {{ end }}

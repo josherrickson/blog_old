@@ -3,12 +3,12 @@
 # server starts, the `open` will resolve, so reload if needed
 .PHONY:preview
 preview:
-	@open http://localhost:1313
+	@open http://localhost:1313/blog/posts
 	@hugo server -D -d docs
 
 .PHONY:preview-no-drafts
 preview-no-drafts:
-	@open http://localhost:1313
+	@open http://localhost:1313/blog/posts
 	@hugo server -d docs
 
 
