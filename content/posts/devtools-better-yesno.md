@@ -6,6 +6,9 @@ tags:
   - devtools
 ---
 
+**Update**: There's a better approach in this [new post]({{< ref
+"R-package-hooks" >}}).
+
 When working with [**devtools**](https://devtools.r-lib.org/), you'll often be
 asked a yes/no question and get the annoying prompt of three randomly ordered
 and randomly worded variations of "Yes" and "No", so that you have to think hard
