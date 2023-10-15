@@ -25,5 +25,5 @@ curl -s https://gist.githubusercontent.com/lifepillar/09a44b8cf0f9397465614e6229
 bash 24-bit-color.sh
 ```
 
-With the correct settings, each row of colors looks almost smooth. With the
-incorrect settings, there are clear issues amongst the colors in the output.
+With the correct settings, each row of colors is an almost smooth gradient. With
+the incorrect settings, there are clear discrepancies in the gradient.
