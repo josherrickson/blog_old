@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+  JE &ndash; Fixing colors in Emacs themes in tmux
+</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+           
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+           
+          color-scheme: light dark;
+      }
+
+      body {
+          font-family: sans-serif;
+          font-size: 16px;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          color: var(--base02);
+          background: var(--base2);
+      }
+
+      @media (prefers-color-scheme: dark) {
+          body {
+              color: var(--base2);
+              background: var(--base02);
+          }
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          font-size: 200%;
+          color: var(--green);
+      }
+
+      h2 {
+          font-size: 150%;
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          font-size: 125%;
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      h4 {
+          font-size: 110%;
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
+  </head>
+  <body>
+    
+<article class="container">
+  <h1>Fixing colors in Emacs themes in tmux</h1>
+  <p>For years I&rsquo;ve struggled with certain themes in Emacs having incorrect colors
+when run in the terminal (<code>emacs -nw</code>) but appearing correct in GUI Emacs.
+Finally found a solution - the issue was with tmux. The fix for me was to
+include this in my .tmux.conf:</p>
+<pre tabindex="0"><code>set -g default-terminal &#39;screen-256color&#39;
+set -ga terminal-overrides &#39;,*256col*:Tc&#39;
+</code></pre><p>This comes from
+<a href="https://github.com/alacritty/alacritty/issues/109#issuecomment-440353106">https://github.com/alacritty/alacritty/issues/109#issuecomment-440353106</a>. There
+are a number of other similar suggested fixes in that thread if this doesn&rsquo;t
+work.</p>
+<p>One thing that made testing this easier is this script:</p>
+<pre tabindex="0"><code>curl -s https://gist.githubusercontent.com/lifepillar/09a44b8cf0f9397465614e622979107f/raw/24-bit-color.sh &gt;24-bit-color.sh
+bash 24-bit-color.sh
+</code></pre><p>With the correct settings, each row of colors looks almost smooth. With the
+incorrect settings, there are clear issues amongst the colors in the output.</p>
+
+  <br>
+  <a href='https://errickson.net'>Home</a> | <a href='/blog/posts/'>Back to blog</a>
+  <img src="https://errickson.goatcounter.com/count?p=/%2fblog%2fposts%2femacs-tmux-themes%2f">
+</article>
+
+  </body>
+</html>

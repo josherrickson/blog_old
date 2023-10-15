@@ -6,7 +6,17 @@
     <description>Recent content in Blog on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Oct 2023 12:03:27 -0400</lastBuildDate><atom:link href="http://errickson.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2023 20:12:30 -0400</lastBuildDate><atom:link href="http://errickson.net/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing colors in Emacs themes in tmux</title>
+      <link>http://errickson.net/blog/posts/emacs-tmux-themes/</link>
+      <pubDate>Sat, 14 Oct 2023 20:12:30 -0400</pubDate>
+      
+      <guid>http://errickson.net/blog/posts/emacs-tmux-themes/</guid>
+      <description>For years I&amp;rsquo;ve struggled with certain themes in Emacs having incorrect colors when run in the terminal (emacs -nw) but appearing correct in GUI Emacs. Finally found a solution - the issue was with tmux. The fix for me was to include this in my .tmux.conf:
+set -g default-terminal &amp;#39;screen-256color&amp;#39; set -ga terminal-overrides &amp;#39;,*256col*:Tc&amp;#39; This comes from https://github.com/alacritty/alacritty/issues/109#issuecomment-440353106. There are a number of other similar suggested fixes in that thread if this doesn&amp;rsquo;t work.</description>
+    </item>
+    
     <item>
       <title>Hooks for loading R packages</title>
       <link>http://errickson.net/blog/posts/r-package-hooks/</link>
