@@ -118,7 +118,7 @@ prompt.</p>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">suppressMessages</span>(<span style="color:#a6e22e">require</span>(devtools))
-</span></span><span style="display:flex;"><span>yesno <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>) {
+</span></span><span style="display:flex;"><span>yesno <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(<span style="color:#66d9ef">...</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cat</span>(<span style="color:#a6e22e">paste0</span>(<span style="color:#66d9ef">...</span>, collapse <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>))
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e"># For whatever reason, devtools:::yesno returns `TRUE` if you</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e"># select a No option, and `FALSE` if you select a Yes option</span>

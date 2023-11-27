@@ -122,10 +122,10 @@ addition, <code>get</code> is much faster:</p>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> f1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>() {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> f1 <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>() {
 </span></span><span style="display:flex;"><span><span style="color:#f92672">+</span> <span style="color:#a6e22e">eval.parent</span>(<span style="color:#a6e22e">str2lang</span>(<span style="color:#e6db74">&#34;a&#34;</span>))
 </span></span><span style="display:flex;"><span><span style="color:#f92672">+</span> }
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> f2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>() {
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> f2 <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>() {
 </span></span><span style="display:flex;"><span><span style="color:#f92672">+</span> <span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;a&#34;</span>, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">sys.frame</span>(<span style="color:#ae81ff">0</span>))
 </span></span><span style="display:flex;"><span><span style="color:#f92672">+</span> }
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> a <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span>
@@ -202,12 +202,12 @@ calls, but I&rsquo;m still working on puzzling all that out.</p>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>foo <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x) {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>foo <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x) {
 </span></span><span style="display:flex;"><span>  a <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;in generic&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">UseMethod</span>(<span style="color:#e6db74">&#34;foo&#34;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>foo.numeric <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x) {
+</span></span><span style="display:flex;"><span>foo.numeric <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(x) {
 </span></span><span style="display:flex;"><span>  a <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;in specific&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">sys.calls</span>())
 </span></span><span style="display:flex;"><span>
