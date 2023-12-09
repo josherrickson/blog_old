@@ -13,9 +13,7 @@
       <link>http://errickson.net/blog/posts/ggplot-increase-all-text-size/</link>
       <pubDate>Wed, 22 Mar 2023 12:04:41 -0400</pubDate>
       <guid>http://errickson.net/blog/posts/ggplot-increase-all-text-size/</guid>
-      <description>You can add
-1 + theme(text = element_text(size=20)) to a ggplot object to modify the size of ALL text elements.
-(This is with ggplot 3.4.1 in case they change the API again.)</description>
+      <description>You can add&#xA;1 + theme(text = element_text(size=20)) to a ggplot object to modify the size of ALL text elements.&#xA;(This is with ggplot 3.4.1 in case they change the API again.)</description>
     </item>
   </channel>
 </rss>

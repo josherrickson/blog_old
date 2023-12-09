@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+  JE &ndash; Rebasing a fork on git
+</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+           
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+           
+          color-scheme: light dark;
+      }
+
+      body {
+          font-family: sans-serif;
+          font-size: 16px;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          color: var(--base02);
+          background: var(--base2);
+      }
+
+      @media (prefers-color-scheme: dark) {
+          body {
+              color: var(--base2);
+              background: var(--base02);
+          }
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          font-size: 200%;
+          color: var(--green);
+      }
+
+      h2 {
+          font-size: 150%;
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          font-size: 125%;
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      h4 {
+          font-size: 110%;
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
+  </head>
+  <body>
+    
+<article class="container">
+  <h1>Rebasing a fork on git</h1>
+  <p>There&rsquo;s tons of resources online about git rebase, but it took me a while to
+find a solution to this specific problem.</p>
+<p>You have a fork of a repository. You&rsquo;ve made commits on your fork, and there are
+also new commits on the original repository (call it the &ldquo;upstream repository&rdquo;).
+You want to pull in those changes, but <em>before</em> your commits, so you don&rsquo;t have
+a merge.</p>
+<ol>
+<li>Add the upstream repository as a remote:</li>
+</ol>
+<pre tabindex="0"><code>git remote add upstream https://github.com/&lt;upstream user&gt;/&lt;upstream repository&gt;.git
+</code></pre><ol start="2">
+<li>Fetch the upstream changes:</li>
+</ol>
+<pre tabindex="0"><code>git fetch upstream
+</code></pre><ol start="3">
+<li>Rebase:</li>
+</ol>
+<pre tabindex="0"><code>git rebase upstream/&lt;branch&gt;
+</code></pre><ol start="4">
+<li>Push, with a force:</li>
+</ol>
+<pre tabindex="0"><code>git push origin &lt;branch&gt; --force
+</code></pre><p>What if you&rsquo;ve already commited the merge? Find the hash of the last commit that
+<strong>you</strong> made, then run</p>
+<pre tabindex="0"><code>git reset --hard &lt;hash&gt;
+</code></pre><p>This only works if the merge is the last thing you&rsquo;ve done; if you have changes
+on your fork both before and after the branch, it&rsquo;ll be far more complicated.</p>
+<p>This is based off many sources, but primarily
+<a href="https://medium.com/@topspinj/how-to-git-rebase-into-a-forked-repo-c9f05e821c8a">https://medium.com/@topspinj/how-to-git-rebase-into-a-forked-repo-c9f05e821c8a</a>.</p>
+
+  <br>
+  <a href='https://errickson.net'>Home</a> | <a href='/blog/posts/'>Back to blog</a>
+  <img src="https://errickson.goatcounter.com/count?p=/%2fblog%2fposts%2fgit-rebase-from-fork%2f">
+</article>
+
+  </body>
+</html>
