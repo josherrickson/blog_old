@@ -98,7 +98,39 @@
 <a href="https://www.guilford.com/books/Handbook-of-Structural-Equation-Modeling/Rick-Hoyle/9781462544646">Handbook of Structural Equation
 Modeling</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
 includes a chapter by West et al<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> including this handy chart:</p>
-<p><img src="/west_at_al_fit_statistics.png" alt="test"></p>
+<p><a href="west_et_al_fit_statistics.png"><img src="west_et_al_fit_statistics.png" width=600px/></a></p>
+<p>A few other notes I&rsquo;ve collected:</p>
+<p>χ<sup>2</sup>:</p>
+<ul>
+<li>For over ~400 obs, χ<sup>2</sup> is less useful because it almost always
+rejects. (Citation is the Mutht&amp;eacuten article linked below under SRMR.)</li>
+<li>We want it to <em>fail</em> to reject, so that saturated model is NOT better.</li>
+<li>A lot of people recommend ignoring this.</li>
+</ul>
+<p>SRMR:</p>
+<ul>
+<li>Measure of &ldquo;approximate fit&rdquo;, as opposed to χ<sup>2</sup> which is &ldquo;exact
+fit&rdquo; (and unrealistic in large data situations).</li>
+<li>Muthtén (author of Mplus)
+<a href="https://www.statmodel.com/download/SRMR2.pdf">suggests</a> the following steps:
+<ol>
+<li>If χ<sup>2</sup> fails to reject, we have a good &ldquo;exact fit&rdquo; and
+there&rsquo;s no need to use SRMR to examine approximate fit.</li>
+<li>If χ<sup>2</sup> rejects, and SRMR is &lt; .08, and there&rsquo;s no large
+residuals, model is approximately fit. (With larger samples, n &gt; 200)</li>
+<li>χ<sup>2</sup> rejects, SRMR &gt; .08, poorly fitting model</li>
+</ol>
+</li>
+</ul>
+<p>TLI/CLI:</p>
+<ul>
+<li>Functions of χ<sup>2</sup>/df ratio</li>
+<li>TLI can be outside 0/1, but usually truncated. CLI always in [0,1].</li>
+<li>Only useful in large sample sizes or  large DF</li>
+<li>Minimum DF is 2</li>
+<li>Mutheén discusses it
+<a href="https://www.statmodel.com/download/TLI.pdf">here</a>.</li>
+</ul>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

@@ -10,17 +10,10 @@
     <atom:link href="http://errickson.net/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Summary of SEM Model Fit Statistics</title>
-      <link>http://errickson.net/blog/posts/sem-model-fit-statistics/</link>
-      <pubDate>Fri, 15 Dec 2023 09:25:33 -0500</pubDate>
-      <guid>http://errickson.net/blog/posts/sem-model-fit-statistics/</guid>
-      <description>I can never keep track of the various model fit statistics. Thankfully, the book Handbook of Structural Equation Modeling1 includes a chapter by West et al2 including this handy chart:&#xA;A few other notes I&amp;rsquo;ve collected:&#xA;χ2:&#xA;For over ~400 obs, χ2 is less useful because it almost always rejects. (Citation is the Mutht&amp;amp;eacuten article linked below under SRMR.) We want it to fail to reject, so that saturated model is NOT better.</description>
-    </item>
-    <item>
-      <title>Summary of SEM Model Fit Statistics</title>
       <link>http://errickson.net/blog/posts/sem-model-fit-statistics/sem-model-fit-statistics/</link>
       <pubDate>Fri, 15 Dec 2023 09:25:33 -0500</pubDate>
       <guid>http://errickson.net/blog/posts/sem-model-fit-statistics/sem-model-fit-statistics/</guid>
-      <description>I can never keep track of the various model fit statistics. Thankfully, the book Handbook of Structural Equation Modeling1 includes a chapter by West et al2 including this handy chart:&#xA;Hoyle, Rick H., ed. Handbook of structural equation modeling. Guilford press, 2012.&amp;#160;&amp;#x21a9;&amp;#xfe0e;&#xA;West, Stephen G., Aaron B. Taylor, and Wei Wu. &amp;ldquo;Model fit and model selection in structural equation modeling.&amp;rdquo; Handbook of structural equation modeling (2012): 209-231.&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
+      <description>I can never keep track of the various model fit statistics. Thankfully, the book Handbook of Structural Equation Modeling1 includes a chapter by West et al2 including this handy chart:&#xA;A few other notes I&amp;rsquo;ve collected:&#xA;χ2:&#xA;For over ~400 obs, χ2 is less useful because it almost always rejects. (Citation is the Mutht&amp;amp;eacuten article linked below under SRMR.) We want it to fail to reject, so that saturated model is NOT better.</description>
     </item>
     <item>
       <title>Rebasing a fork on git</title>
