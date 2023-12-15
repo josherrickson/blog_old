@@ -4,5 +4,7 @@ title = 'Josh Errickson'
 publishDir = 'docs'
 pygmentsOptions = "linenos=table"
 
-[taxonomies]
-  tag = 'tags'
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

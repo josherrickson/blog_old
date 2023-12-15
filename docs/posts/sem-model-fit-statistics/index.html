@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+  JE &ndash; Summary of SEM Model Fit Statistics
+</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+           
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+           
+          color-scheme: light dark;
+      }
+
+      body {
+          font-family: sans-serif;
+          font-size: 16px;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          color: var(--base02);
+          background: var(--base2);
+      }
+
+      @media (prefers-color-scheme: dark) {
+          body {
+              color: var(--base2);
+              background: var(--base02);
+          }
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          font-size: 200%;
+          color: var(--green);
+      }
+
+      h2 {
+          font-size: 150%;
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          font-size: 125%;
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      h4 {
+          font-size: 110%;
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
+  </head>
+  <body>
+    
+<article class="container">
+  <h1>Summary of SEM Model Fit Statistics</h1>
+  <p>I can never keep track of the various model fit statistics. Thankfully, the book
+<a href="https://www.guilford.com/books/Handbook-of-Structural-Equation-Modeling/Rick-Hoyle/9781462544646">Handbook of Structural Equation
+Modeling</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+includes a chapter by West et al<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> including this handy chart:</p>
+<p><a href="west_et_al_fit_statistics.png"><img src="west_et_al_fit_statistics.png" width=600px/></a></p>
+<p>A few other notes I&rsquo;ve collected:</p>
+<p>χ<sup>2</sup>:</p>
+<ul>
+<li>For over ~400 obs, χ<sup>2</sup> is less useful because it almost always
+rejects. (Citation is the Mutht&amp;eacuten article linked below under SRMR.)</li>
+<li>We want it to <em>fail</em> to reject, so that saturated model is NOT better.</li>
+<li>A lot of people recommend ignoring this.</li>
+</ul>
+<p>SRMR:</p>
+<ul>
+<li>Measure of &ldquo;approximate fit&rdquo;, as opposed to χ<sup>2</sup> which is &ldquo;exact
+fit&rdquo; (and unrealistic in large data situations).</li>
+<li>Muthtén (author of Mplus)
+<a href="https://www.statmodel.com/download/SRMR2.pdf">suggests</a> the following steps:
+<ol>
+<li>If χ<sup>2</sup> fails to reject, we have a good &ldquo;exact fit&rdquo; and
+there&rsquo;s no need to use SRMR to examine approximate fit.</li>
+<li>If χ<sup>2</sup> rejects, and SRMR is &lt; .08, and there&rsquo;s no large
+residuals, model is approximately fit. (With larger samples, n &gt; 200)</li>
+<li>χ<sup>2</sup> rejects, SRMR &gt; .08, poorly fitting model</li>
+</ol>
+</li>
+</ul>
+<p>TLI/CLI:</p>
+<ul>
+<li>Functions of χ<sup>2</sup>/df ratio</li>
+<li>TLI can be outside 0/1, but usually truncated. CLI always in [0,1].</li>
+<li>Only useful in large sample sizes or  large DF</li>
+<li>Minimum DF is 2</li>
+<li>Mutheén discusses it
+<a href="https://www.statmodel.com/download/TLI.pdf">here</a>.</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Hoyle, Rick H., ed. Handbook of structural equation modeling. Guilford
+press, 2012.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>West, Stephen G., Aaron B. Taylor, and Wei Wu. &ldquo;Model fit and model
+selection in structural equation modeling.&rdquo; Handbook of structural equation
+modeling (2012): 209-231.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  <br>
+  <a href='https://errickson.net'>Home</a> | <a href='/blog/posts/'>Back to blog</a>
+  <img src="https://errickson.goatcounter.com/count?p=/%2fblog%2fposts%2fsem-model-fit-statistics%2f">
+</article>
+
+  </body>
+</html>
